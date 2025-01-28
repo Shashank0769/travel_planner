@@ -1,8 +1,9 @@
 import streamlit as st
 import json
 from huggingface_hub import InferenceClient
-
-API_TOKEN = "Your_Hugging_face_key"  # Replace with your actual token
+import os
+API_TOKEN = os.getenv("HUGGINGFACE_API_KEY") 
+# API_TOKEN = "Your_Hugging_face_key"  # Replace with your actual token
 
 # Use the Hugging Face model
 client = InferenceClient(model="HuggingFaceH4/zephyr-7b-beta", token=API_TOKEN)
